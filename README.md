@@ -1,0 +1,2 @@
+# MinerGameMain
+ collectables
