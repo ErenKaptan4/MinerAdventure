@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData : MonoBehaviour
+public abstract class GameData : MonoBehaviour
 {
     private static int myScore = 0;
 
@@ -10,5 +10,13 @@ public class GameData : MonoBehaviour
     {
         get { return myScore; }
         set { myScore = value; }
+    }
+
+    private static int mylifes = 5;
+
+    public static int Lifes
+    {
+        get { return mylifes; }
+        set { mylifes = value; }
     }
 }
