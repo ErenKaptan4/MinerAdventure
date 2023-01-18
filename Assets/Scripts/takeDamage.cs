@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class takeDamage : MonoBehaviour
+public class TakeDamage : MonoBehaviour
 {
     private Rigidbody2D myRigidbody;
     private Animator animate;

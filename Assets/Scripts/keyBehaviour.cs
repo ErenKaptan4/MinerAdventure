@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class keyBehaviour : MonoBehaviour
+public class KeyBehaviour : MonoBehaviour
 {
-    [SerializeField] doorBehaviour checkDoor;
+    [SerializeField] DoorBehaviour checkDoor;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private Animator animate;
     private Rigidbody2D myRigidbody;
-    private SpriteRenderer sprite;
     private BoxCollider2D myCollider;
+
+    public ObjectPooling bulletPool;
+    private ThrowRock _firingInstance;
 
     private float xVal = 0;
 
@@ -21,14 +24,17 @@ public class Movement : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<BoxCollider2D>();
-        sprite = GetComponent<SpriteRenderer>();
         animate = GetComponent<Animator>();
+
+        _firingInstance = GetComponentInChildren(typeof(ThrowRock)) as ThrowRock;
 
     }
 
 
     private void Update()
     {
+        BulletFiring();
+
         this.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
         //jump and move to sides
         xVal = Input.GetAxisRaw("Horizontal");
@@ -51,12 +57,12 @@ public class Movement : MonoBehaviour
         if (xVal > 0f)
         {
             curState = MovementType.running;
-            sprite.flipX = false;
+            gameObject.transform.localScale = new Vector3(1.3f, 1.3f, 0);
         }
         else if (xVal < 0f)
         {
             curState = MovementType.running;
-            sprite.flipX = true;
+            gameObject.transform.localScale = new Vector3(-1.3f, 1.3f, 0);
         }
         else
         {
@@ -82,5 +88,16 @@ public class Movement : MonoBehaviour
     {
         //created another hitbox around the player
         return Physics2D.BoxCast(myCollider.bounds.center, myCollider.bounds.size, 0f, Vector2.down, .1f, jumpFromGround);
+    }
+
+
+    void BulletFiring()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject smallbullet = bulletPool.GetPooledObject();
+            if (_firingInstance != null) _firingInstance.CannonFire(smallbullet);
+        }
+
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class hitStomp : enemy
+public class HitStomp : Enemy
 {
     private int amount;
     public float bounce;
@@ -29,8 +29,8 @@ public class hitStomp : enemy
             Destroy(other.gameObject);
 
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, bounce);
-            GameData.Score++;
             amount++;
+            GameData.Score += amount;
             Debug.Log("Stoped on zombie1: " + amount);
             scoreText.text = "Score: " + GameData.Score;
         }

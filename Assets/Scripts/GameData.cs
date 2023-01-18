@@ -19,4 +19,5 @@ public abstract class GameData : MonoBehaviour
         get { return mylifes; }
         set { mylifes = value; }
     }
+
 }

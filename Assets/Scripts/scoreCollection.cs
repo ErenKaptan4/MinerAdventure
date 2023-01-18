@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class scoreCollection : MonoBehaviour
+public class ScoreCollection : MonoBehaviour
 {
+    private int collected = 0;
     public TextMeshProUGUI scoreText;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,9 +15,11 @@ public class scoreCollection : MonoBehaviour
         {
             //if collided with "Diamond" destroy it and add score
             Destroy(collision.gameObject);
-            GameData.Score = GameData.Score + 1;
+            collected++;
+            GameData.Score++;
             Debug.Log("Diamond collected: " + GameData.Score);
             scoreText.text = "Score: " + GameData.Score;
+
         }
     }
 }
