@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Rock : Bullet
@@ -17,4 +18,5 @@ public class Rock : Bullet
         // Destroy(this.gameObject);
         this.gameObject.SetActive(false);
     }
+
 }

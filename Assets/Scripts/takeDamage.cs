@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TakeDamage : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class TakeDamage : MonoBehaviour
                 playerDie();
             }
             Debug.Log(GameData.Lifes);
+            GameManager.Instance.GameOver();
         }
         //if collided w zombie
         if (collision.gameObject.CompareTag("hit"))
@@ -34,6 +36,7 @@ public class TakeDamage : MonoBehaviour
                 playerDie();
             }
             Debug.Log(GameData.Lifes);
+            GameManager.Instance.GameOver();
         }
     }
 

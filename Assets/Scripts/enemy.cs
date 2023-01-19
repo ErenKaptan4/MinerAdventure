@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     public int destination;
 
+
     private void Update()
     {
         if (destination == 0)
