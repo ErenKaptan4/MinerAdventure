@@ -23,20 +23,20 @@ public class TakeDamage : MonoBehaviour
             if (GameData.Lifes <= 0)
             {
                 playerDie();
+                GameManager.Instance.GameOver();
             }
             Debug.Log(GameData.Lifes);
-            GameManager.Instance.GameOver();
         }
         //if collided w zombie
-        if (collision.gameObject.CompareTag("hit"))
+        if (collision.gameObject.CompareTag("Zombie"))
         {
             GameData.Lifes = GameData.Lifes - 1;
             if (GameData.Lifes <= 0)
             {
                 playerDie();
+                GameManager.Instance.GameOver();
             }
             Debug.Log(GameData.Lifes);
-            GameManager.Instance.GameOver();
         }
     }
 
