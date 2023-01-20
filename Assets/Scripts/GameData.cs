@@ -12,7 +12,7 @@ public abstract class GameData : MonoBehaviour
         set { myScore = value; }
     }
 
-    private static int mylifes = 5;
+    private static int mylifes;
 
     public static int Lifes
     {

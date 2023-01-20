@@ -7,12 +7,13 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
 
-    [SerializeField] Button startButton, exitButton;
+    [SerializeField] Button startButton, exitButton, difficultyButton;
     // Start is called before the first frame update
     void Start()
     {
         startButton.onClick.AddListener(StartGame);
         exitButton.onClick.AddListener(QuitGame);
+        difficultyButton.onClick.AddListener(ChangeDifficulty);
     }
 
     void StartGame()
@@ -31,4 +32,19 @@ public class ButtonManager : MonoBehaviour
 #endif
     }
 
+    bool buttonPressed = false;
+    void ChangeDifficulty()
+    {
+        
+        if(buttonPressed == false)
+        {
+            GameData.Lifes = 10;
+            buttonPressed = true;
+        }else if(buttonPressed == true)
+        {
+            GameData.Lifes = 5;
+            buttonPressed = false;
+        }
+        Debug.Log(GameData.Lifes);
+    }
 }
