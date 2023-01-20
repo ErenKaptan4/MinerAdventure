@@ -5,7 +5,6 @@ using TMPro;
 
 public class HitStomp : Enemy
 {
-    private int amount;
     public float bounce;
     public Rigidbody2D myRigidbody;
     public TextMeshProUGUI scoreText;
@@ -15,11 +14,6 @@ public class HitStomp : Enemy
         scoreText = FindObjectOfType<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,9 +23,8 @@ public class HitStomp : Enemy
             Destroy(other.gameObject);
 
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, bounce);
-            amount++;
-            GameData.Score += amount;
-            Debug.Log("Stoped on zombie1: " + amount);
+            GameData.Score++;
+            Debug.Log("Stoped on zombie: " + GameData.Score);
             scoreText.text = "Score: " + GameData.Score;
         }
     }

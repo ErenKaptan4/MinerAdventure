@@ -5,7 +5,6 @@ using TMPro;
 
 public class ScoreCollection : MonoBehaviour
 {
-    private int collected = 0;
     public TextMeshProUGUI scoreText;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +14,6 @@ public class ScoreCollection : MonoBehaviour
         {
             //if collided with "Diamond" destroy it and add score
             Destroy(collision.gameObject);
-            collected++;
             GameData.Score++;
             Debug.Log("Diamond collected: " + GameData.Score);
             scoreText.text = "Score: " + GameData.Score;

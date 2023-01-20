@@ -5,17 +5,9 @@ using TMPro;
 
 public abstract class Bullet : MonoBehaviour
 {
-    public int amount = 0;
     public TextMeshProUGUI scoreText;
 
-    [SerializeField] protected float speed = 0;
-
-    Vector3 mousePoint3D;
-    // Start is called before the first frame update
-    protected virtual void Start()
-    {
-
-    }
+    [SerializeField] protected float speed;
 
     protected virtual void OnEnable()
     {
@@ -29,9 +21,8 @@ public abstract class Bullet : MonoBehaviour
         {
             //This will happen when bullet hit zombie
             Destroy(other.gameObject);
-            amount++;
-            GameData.Score += amount;
-            Debug.Log("Stoped on zombie1: " + amount);
+            GameData.Score++;
+            Debug.Log("Hit Zombie: " + GameData.Score);
             scoreText.text = "Score: " + GameData.Score;
         }
     }
