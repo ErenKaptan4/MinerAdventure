@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class ScoreCollection : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    public Text ScoreText;
+
+    void Update()
+    {
+        ScoreText.text = GameData.Score.ToString();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        scoreText = FindObjectOfType<TextMeshProUGUI>();
 
         if (collision.gameObject.CompareTag("Diamond"))
         {
@@ -16,8 +20,7 @@ public class ScoreCollection : MonoBehaviour
             Destroy(collision.gameObject);
             GameData.Score++;
             Debug.Log("Diamond collected: " + GameData.Score);
-            scoreText.text = "Score: " + GameData.Score;
-
+            ScoreText = GameObject.Find("ScoreText").GetComponent<Text>();
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] Text scoreText;
+    public Text scoreText;
     SaveLoadManager mySaveLoadManager;
 
     protected override void Awake()
@@ -14,18 +14,34 @@ public class GameManager : Singleton<GameManager>
         mySaveLoadManager = new SaveLoadManager();
         base.Awake();
         DontDestroyOnLoad(this.gameObject);
-        scoreText.text = "Score: " + GameData.Score;
+        DisplayScore();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     public void GameOver()
     {
         mySaveLoadManager.DeleteFile();
         SceneManager.LoadScene("GameOver");
     }
+    public void DisplayScore()
+    {
+        scoreText.text = GameData.Score.ToString();
+    }
 
     public void Level2()
     {
         mySaveLoadManager.DeleteFile();
         SceneManager.LoadScene("Level2");
+        
+        
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name == "GameOver")
+        {
+            scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+            DisplayScore();
+        }
     }
 
 }

@@ -10,7 +10,6 @@ public class SaveLoadManager
     public void SaveData()
     {
         SerializedData mySerializedData = new SerializedData();
-        mySerializedData.ser_score = GameData.Score;
 
         BinaryFormatter bf = new BinaryFormatter();
 
@@ -32,7 +31,6 @@ public class SaveLoadManager
             mySerializedData = (SerializedData)bf.Deserialize(myfile);
             myfile.Close();
 
-            GameData.Score = mySerializedData.ser_score;
 
         }
     }

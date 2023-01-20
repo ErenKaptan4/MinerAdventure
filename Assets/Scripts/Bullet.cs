@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public abstract class Bullet : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    public Text ScoreText;
 
     [SerializeField] protected float speed;
+    void Update()
+    {
+        ScoreText.text = GameData.Score.ToString();
+    }
 
     protected virtual void OnEnable()
     {
@@ -23,7 +27,7 @@ public abstract class Bullet : MonoBehaviour
             Destroy(other.gameObject);
             GameData.Score++;
             Debug.Log("Hit Zombie: " + GameData.Score);
-            scoreText.text = "Score: " + GameData.Score;
+            ScoreText = GameObject.Find("ScoreText").GetComponent<Text>();
         }
     }
 

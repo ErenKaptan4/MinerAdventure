@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class HitStomp : Enemy
 {
     public float bounce;
     public Rigidbody2D myRigidbody;
-    public TextMeshProUGUI scoreText;
+    public Text ScoreText;
 
-    void Start()
+    void Update()
     {
-        scoreText = FindObjectOfType<TextMeshProUGUI>();
+        ScoreText.text = GameData.Score.ToString();
     }
 
 
@@ -25,7 +25,7 @@ public class HitStomp : Enemy
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, bounce);
             GameData.Score++;
             Debug.Log("Stoped on zombie: " + GameData.Score);
-            scoreText.text = "Score: " + GameData.Score;
+            ScoreText = GameObject.Find("ScoreText").GetComponent<Text>();
         }
     }
 }
