@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zombie
   m_EditorClassIdentifier: 
   enemyGO: {fileID: 678936780879718872, guid: b2cd04e64fcbf794091d8db92be45d9c, type: 3}
-  speed: 20
+  speed: 2.5

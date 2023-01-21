@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365fcf31afde66645b79345ef95338c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Zombie: {fileID: 11400000, guid: ccff34a1df3eb1141a1d9b178fbb430a, type: 2}
   PatrolPoints:
   - {fileID: 0}
   - {fileID: 0}

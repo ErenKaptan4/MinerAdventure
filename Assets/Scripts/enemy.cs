@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemySO enemy;
+
     public Transform[] PatrolPoints;
     public float speed;
     public int destination;
 
+    void Start()
+    {
+        speed = enemy.speed;
+    }
 
     private void Update()
     {

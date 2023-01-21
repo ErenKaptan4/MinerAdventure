@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class EnemySO : ScriptableObject
 {
-
     public GameObject enemyGO;
     public float speed;
 }

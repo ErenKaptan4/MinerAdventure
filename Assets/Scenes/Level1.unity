@@ -1881,6 +1881,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1469413768}
     m_Modifications:
     - target: {fileID: 678936780879718849, guid: b2cd04e64fcbf794091d8db92be45d9c, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: ccff34a1df3eb1141a1d9b178fbb430a, type: 2}
+    - target: {fileID: 678936780879718849, guid: b2cd04e64fcbf794091d8db92be45d9c, type: 3}
       propertyPath: PatrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1558983807}
@@ -2120,6 +2124,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1469413768}
     m_Modifications:
+    - target: {fileID: 678936780879718849, guid: b2cd04e64fcbf794091d8db92be45d9c, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: ccff34a1df3eb1141a1d9b178fbb430a, type: 2}
     - target: {fileID: 678936780879718849, guid: b2cd04e64fcbf794091d8db92be45d9c, type: 3}
       propertyPath: speed
       value: 2.5
@@ -10023,6 +10031,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1469413768}
     m_Modifications:
+    - target: {fileID: 678936780879718849, guid: b2cd04e64fcbf794091d8db92be45d9c, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: ccff34a1df3eb1141a1d9b178fbb430a, type: 2}
     - target: {fileID: 678936780879718849, guid: b2cd04e64fcbf794091d8db92be45d9c, type: 3}
       propertyPath: speed
       value: 1.5
@@ -24723,6 +24735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a855a591bdc969b4d8a02aa78f6f3e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
   PatrolPoints: []
   speed: 0
   destination: 0
@@ -25731,6 +25744,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1469413768}
     m_Modifications:
+    - target: {fileID: 678936780879718849, guid: b2cd04e64fcbf794091d8db92be45d9c, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: ccff34a1df3eb1141a1d9b178fbb430a, type: 2}
     - target: {fileID: 678936780879718849, guid: b2cd04e64fcbf794091d8db92be45d9c, type: 3}
       propertyPath: speed
       value: 3
